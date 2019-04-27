@@ -25,6 +25,8 @@ CREATE TABLE [Employees] (
   [gender] INT,
   [hire_date] DATETIME,
   [admin] INT,
+  [username] NVARCHAR (15),
+  [password] NVARCHAR (15),
   PRIMARY KEY ([empl_ID])
 );
 
@@ -150,4 +152,3 @@ CREATE TABLE [Wellness_Challenges] (
 );
 
 CREATE INDEX [FK] ON  [Wellness_Challenges] ([tracking_ID]);
-

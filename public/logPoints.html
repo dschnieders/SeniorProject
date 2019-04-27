@@ -6,8 +6,9 @@
         <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
         <meta name="generator" content="Jekyll v3.8.5">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+       
         <title>PEC · H&W</title>
-    
+
         <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
     
         <!-- Bootstrap core CSS -->
@@ -29,13 +30,14 @@
               font-size: 3.5rem;
             }
           }
+          
         </style>
         <!-- Custom styles for this template -->
         <link href="starter-template.css" rel="stylesheet">
       </head>
       <body style="">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-default navbar-static-top">
-      <a class="navbar-brand" href="index.html">Health And Wellness</a>
+      <a class="navbar-brand" href="main.html">Health And Wellness</a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -51,6 +53,9 @@
           <li class="nav-item">
             <a class="nav-link" href="currentPoints.html">Current Points</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Logout</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -58,85 +63,122 @@
     <main role="main" class="container">
     
       <div class="starter-template">
-            <form>
+        <h1>Please enter your progress</h1>
+            <form action="" style="margin: auto">
                     <div class="form-row">
-                      <div class="form-group">
-                            <label for="sel1">Preventive Activities</label>
-                            <select class="form-control" id="sel1">
-                              <option>Annual Physical</option>
-                              <option>Dental Exam (#1)</option>
-                              <option>Dental Exam (#2)</option>
-                              <option>Flu Shot</option>
-                              <option>Complete Biometric Screening, HRA, AND Follow Up</option>
-                            </select>
+                          <div class="form-group">
+                                <label for="prev_act">Preventive Activities</label>
+                                <select class="form-control" id="prev_act" name="prev_act" multiple>
+                                  <option>Annual Physical</option>
+                                  <option>Dental Exam (#1)</option>
+                                  <option>Dental Exam (#2)</option>
+                                  <option>Flu Shot</option>
+                                  <option>Complete Biometric Screening, HRA, AND Follow Up</option>
+                                </select>
+                            </div>
                       </div>
-                      <div class="form-group">
-                            <label for="sel1">Wellness Challenges</label>
-                            <select class="form-control" id="sel1">
-                              <option>February</option>
-                              <option>April</option>
-                              <option>June</option>
-                              <option>August</option>
-                              <option>October</option>
-                              <option>November & December</option>
-                            </select>
-                      </div>
-                      <div class="form-group">
-                            <label for="sel1">Wellness Wednesday</label>
-                            <select class="form-control" id="sel1">
-                              <option>February</option>
-                              <option>March</option>
-                              <option>April</option>
-                              <option>May</option>
-                              <option>June</option>
-                              <option>July</option>
-                              <option>August</option>
-                              <option>September</option>
-                              <option>October</option>
-                              <option>November</option>
-                              <option>December</option>
-                            </select>
-                      </div>
-                      <div class="form-group">
-                            <label for="sel1">Wellness Presentations</label>
-                            <select class="form-control" id="sel1">
-                              <option>February</option>
-                              <option>March</option>
-                              <option>April</option>
-                              <option>May</option>
-                              <option>June</option>
-                              <option>July</option>
-                              <option>August</option>
-                              <option>September</option>
-                              <option>October</option>
-                              <option>November</option>
-                            </select>
-                      </div>
-                    <div class="form-group">
-                      <label for="inputAddress">Workouts</label>
-                      <input type="text" class="form-control" id="inputAddress" placeholder="Figure out how to do this">
+                      <div class="form-row">
+                        <div class="form-group">
+                          <label for="well_chall">Wellness Challenges</label>
+                          <select class="form-control" id="well_chall" name ="well_chall" multiple>
+                            <option>February</option>
+                            <option>April</option>
+                            <option>June</option>
+                            <option>August</option>
+                            <option>October</option>
+                            <option>November & December</option>
+                          </select>
                     </div>
-                    <div class="form-group">
-                      <label for="inputAddress2">Address 2</label>
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="inputCity">City</label>
-                        <input type="text" class="form-control" id="inputCity">
                       </div>
-                      <div class="form-group col-md-4">
-                        <label for="inputState">State</label>
-                        <select id="inputState" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>...</option>
+                      <div class="form-row">
+                        <div class="form-group">
+                          <label for="well_wed">Wellness Wednesday</label>
+                          <select class="form-control" id="well_wed" name="well_wed" multiple>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                          </select>
+                    </div>
+                      </div>
+                     <div class="form-row">
+                      <div class="form-group">
+                        <label for="well_pres">Wellness Presentations</label>
+                        <select class="form-control" id="well_pres" name="well-pres" multiple>
+                          <option>February</option>
+                          <option>March</option>
+                          <option>April</option>
+                          <option>May</option>
+                          <option>June</option>
+                          <option>July</option>
+                          <option>August</option>
+                          <option>September</option>
+                          <option>October</option>
+                          <option>November</option>
                         </select>
+                  </div>
+                     </div>
+                      <!-- <div class="form-row">
+                        <div class="form-group">
+                          <label for="workouts">Workouts</label>
+                          <input type="text" class="form-control" id="workouts" name="workouts" placeholder="Figure out how to do this">
+                        </div>
+                      </div> -->
+                      <!-- <div class="form-row">
+                        <div class="form-group">
+                          <label for="yammer">Yammer</label>
+                          <input type="text" class="form-control" id="yammer" name="yammer" placeholder="Figure out how to do this">
+                        </div>
+                      </div> -->
+                      <div class="form-row">
+                        <div class="form-group">
+                          <label for="well_class">Wellness Class</label>
+                          <input type="text" class="form-control" id="well_class" name="well_class" placeholder="ie. CPR training">
+                        </div>
                       </div>
-                      <div class="form-group col-md-2">
-                        <label for="inputZip">Zip</label>
-                        <input type="text" class="form-control" id="inputZip">
+                      <div class="form-row">
+                        <div class="form-group">
+                          <label for="org_act">Organized Activity</label>
+                          <input type="text" class="form-control" id="org_act" name="org_act" placeholder="ie. church softball">
+                        </div>
                       </div>
-                    </div>
+                      <div class="form-row">
+                        <div class="form-group">
+                          <label for="soc_grp">Social Group</label>
+                          <input type="text" class="form-control" id="soc_grp" name="soc_grp" placeholder="ie. Young Proffesionals of Wichita">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group">
+                          <label for="well_goal">Wellness Goal</label>
+                          <input type="text" class="form-control" id="well_goal" name="well_goal" placeholder="Goal set by you and H&W Coordinator">
+                        </div>
+                      </div>
+                      <!-- <div class="form-row">
+                        <div class="form-group">
+                          <label for="goal_meet">Goal Meetings</label>
+                          <input type="text" class="form-control" id="goal_meet" name="goal_meet" placeholder="Figure out how to do this">
+                        </div>
+                      </div> -->
+                      <div class="form-row">
+                        <div class="form-group">
+                          <label for="bon_act">Bonus Activities</label>
+                          <select class="form-control" id="bon_act" name="bon_act" multiple>
+                            <option>Volunteer</option>
+                            <option>Try a new workout</option>
+                            <option>Donate blood</option>
+                            <option>401k meeting</option>
+                            <option>Benefits meeting</option>
+                          </select>
+                        </div>
+                      </div>
                     <button type="submit" class="btn btn-primary">Update</button>
                   </form>
       </div>
