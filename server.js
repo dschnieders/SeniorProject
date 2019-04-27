@@ -40,7 +40,7 @@ app.post('/auth', function(req, res){
       if (results.length > 0){
         request.session.loggedin = true;
         request.session.username = username;
-        Response.redirect('home');
+        Response.redirect('public/main.html');
       } else{
         Response.send('Incorrect Username and/or Password!');
       }
