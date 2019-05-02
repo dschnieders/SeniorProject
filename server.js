@@ -28,37 +28,36 @@ let db = new sqlite3.Database('./SQL/SeniorProject.db', (err) =>{
   if (err){
     return console.error(err.message);
   }
-  console.log('Connected to the in-disk SQLite database.')
+  console.log('Connected to the in-disk SQLite database.');
 });
 
 app.post('/auth', function(req, res){
-  var username = request.body.username;
-  var password = request.body.password;
-
+  var username = req.body.username;
+  var password = req.body.password;
   if(username && password){
-    db.get('SELECT * FROM Employees WHERE username = ? AND password = ?', [username, password], function(error, results, fields){
-      if (results.length > 0){
-        request.session.loggedin = true;
-        request.session.username = username;
-        Response.redirect('public/main.html');
+    db.get('SELECT * FROM Employees WHERE username = ? AND password = ?', [username, password], function(err, doc){
+      if (doc.length !== 0){
+        req.session.loggedin = true;
+        req.session.username = username;
+        res.redirect('public/main.html');
       } else{
-        Response.send('Incorrect Username and/or Password!');
+        res.send('Incorrect Username and/or Password!');
       }
-      Response.end();
+      res.end();
     });
   } else{
-    Response.send('Please enter Username and Password!');
-    Response.end();
+    res.send('Please enter Username and Password!');
+    res.end();
   }
 });
 
-app.get('/home', function(request, respone){
-  if(request.session.loggedin){
-    Response.send('Welcome back, ' + request.session.username + '!');
+app.get('/home', function(req, res){
+  if(req.session.loggedin){
+    res.send('Welcome back, ' + req.session.username + '!');
   } else{
-    Response.send('Please login to view this page!');
+    res.send('Please login to view this page!');
   }
-  Response.end();
+  res.end();
 });
 
 app.use(express.static("./public"));
