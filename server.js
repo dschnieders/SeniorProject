@@ -38,6 +38,9 @@ let db = new sqlite3.Database('./SQL/SeniorProject.db', (err) =>{
   });
 }); */
 
+/* 
+  Log-in function for index.html
+*/
 app.post('/auth', function(req, res){
   var username = req.body.username;
   var password = req.body.password;
@@ -58,6 +61,9 @@ app.post('/auth', function(req, res){
   }
 });
 
+/*
+  Honestly, not sure what this does.
+*/
 app.get('/home', function(req, res){
   if(req.session.loggedin){
     res.send('Welcome back, ' + req.session.username + '!');
@@ -67,6 +73,9 @@ app.get('/home', function(req, res){
   res.end();
 });
 
+/*
+  Serves index.html as the landing page.
+*/
 app.use(express.static("./public"));
 app.get('/', function(req, res) {
     res.sendfile('public/index.html');
