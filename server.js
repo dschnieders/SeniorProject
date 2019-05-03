@@ -21,7 +21,7 @@ const cache = {};
 cache['currentPoints.html'] = fs.readFileSync('public/currentPoints.html');
 cache['incentives.html'] = fs.readFileSync('public/incentives.html');
 cache['logPoints.html'] = fs.readFileSync('public/logPoints.html');
-cache['main.html'] = fs.readFileSync('public/main.html');
+cache['home.html'] = fs.readFileSync('public/home.html');
 
 const sqlite3 = require('sqlite3').verbose();
 let db = new sqlite3.Database('./SQL/SeniorProject.db', (err) =>{
@@ -46,7 +46,7 @@ app.post('/auth', function(req, res){
       if (doc.length !== 0){
         req.session.loggedin = true;
         req.session.username = username;
-        res.redirect('/main.html');
+        res.redirect('/home.html');
       } else{
         res.send('Incorrect Username and/or Password!');
       }
