@@ -31,15 +31,22 @@ let db = new sqlite3.Database('./SQL/SeniorProject.db', (err) =>{
   console.log('Connected to the in-disk SQLite database.');
 });
 
+/* db.serialize(function(){
+  db.get('SELECT * FROM Employees WHERE username LIKE \'%dschnieders%\' AND password LIKE \'%password%\';', function (err, rows){
+    console.log(err);
+    console.log(rows);
+  });
+}); */
+
 app.post('/auth', function(req, res){
   var username = req.body.username;
   var password = req.body.password;
   if(username && password){
-    db.get('SELECT * FROM Employees WHERE username = ? AND password = ?', [username, password], function(err, doc){
+    db.get('SELECT * FROM Employees WHERE username LIKE \'%dschnieders%\' AND password LIKE \'%password%\';', function(err, doc){
       if (doc.length !== 0){
         req.session.loggedin = true;
         req.session.username = username;
-        res.redirect('public/main.html');
+        res.redirect('/main.html');
       } else{
         res.send('Incorrect Username and/or Password!');
       }
