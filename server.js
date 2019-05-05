@@ -26,17 +26,18 @@ cache['logPoints.html'] = fs.readFileSync('public/logPoints.html');
 cache['home.html'] = fs.readFileSync('public/home.html');
 
 const sqlite3 = require('sqlite3').verbose();
-let db = new sqlite3.Database('./SQL/SeniorProject.db', (err) =>{
-  if (err){
-    return console.error(err.message);
-  }
-  console.log('Connected to the in-disk SQLite database.');
-});
+
 
 /* 
   Log-in function for index.html
 */
 app.post('/auth', function(req, res){
+  let db = new sqlite3.Database('./SQL/SeniorProject.db', (err) =>{
+    if (err){
+      return console.error(err.message);
+    }
+    console.log('Connected to the in-disk SQLite database.');
+  });
   var username = req.body.username;
   var password = req.body.password;
   let login_sql = 'SELECT * FROM Employees WHERE username LIKE ? AND password LIKE ?;';
@@ -55,6 +56,8 @@ app.post('/auth', function(req, res){
     res.send('Please enter Username and Password!');
     res.end();
   }
+  db.close();
+  console.log('DB access has been closed.');
 });
 
 /*
@@ -73,61 +76,123 @@ app.get('/home', function(req, res){
  * List of update functions for the SQLite3 DB from logPoints.html.
  */
 app.post('/log', function (req, res){
+  let db = new sqlite3.Database('./SQL/SeniorProject.db', (err) =>{
+    if (err){
+      return console.error(err.message);
+    }
+    console.log('Connected to the in-disk SQLite database.');
+  });
+  /**
+   * Updates Preventative_Activites table.
+   */
   if(req.body.prev_act != undefined){
   console.log(req.body.prev_act);
   }else{
     console.log('prev_act undefined');
   }
+  /**
+   * Updates Wellness_Challenge table.
+   */
   if(req.body.well_chall != undefined){
     console.log(req.body.well_chall);
     }else{
       console.log('well_chall undefined');
-    }
+  }
+  /**
+   * Updates Wellness_Wednesday table.
+   */
   if(req.body.well_wed != undefined){
   console.log(req.body.well_wed);
   }else{
     console.log('well_wed undefined');
   }
+  /**
+   * Update Wellness_Presentation table.
+   */
   if(req.body.well_pres != undefined){
     console.log(req.body.well_pres);
     }else{
       console.log('well_pres undefined');
-    }
+  }
+  /**
+   * Update Wellness_Class table.
+   */
   if(req.body.well_class != ""){
     console.log(req.body.well_class);
-  }else{
-    console.log('well_class undefined');
-  }
-  if(req.body.org_act != ""){
-    console.log(req.body.org_act);
-  }else{
-    console.log('org_act undefined');
-  }
-  if(req.body.soc_grp !=""){
-    console.log(req.body.soc_grp);
-  }else{
-    console.log('soc_grp undefined');
-  }
-  if(req.body.well_goal != ""){
-    console.log(req.body.well_goal);
-    let data = [req.body.well_goal, req.session.username];
-    let update_ba = 'UPDATE Wellness_Goal SET goal = ? INNER JOIN Employee_Tracking ON Employee_Tracking.goal_ID = Wellness_Goal.goal_ID INNER JOIN Employees ON Employees.tracking_ID on Employee_Tracking.tracking_ID WHERE Employees.username = ?;';
-
-    db.run(update_ba, data, function(err){
+    console.log(req.session.username);
+    let data = [req.body.well_class, req.session.username];
+    let update = 'UPDATE Wellness_Class SET class_name = ? WHERE class_ID = (SELECT class_ID FROM Employee_Tracking WHERE tracking_ID = (SELECT tracking_ID FROM Employees WHERE Employees.username = ?));';
+    db.run(update, data, function(err){
       if(err){
         return console.error(err.message);
       }
-      console.log('Row(s) update: ${this.changes}');
+      console.log('Wellness_Class updated.');
+    });
+  }else{
+    console.log('well_class undefined');
+  }
+  /**
+   * Update Organized_Activity table.
+   */
+  if(req.body.org_act != ""){
+    console.log(req.body.org_act);
+    console.log(req.session.username);
+    let data = [req.body.org_act, req.session.username];
+    let update = 'UPDATE Organized_Activity SET org_name = ? WHERE orgAct_ID = (SELECT orgAct_ID FROM Employee_Tracking WHERE tracking_ID = (SELECT tracking_ID FROM Employees WHERE Employees.username = ?));';
+    db.run(update, data, function(err){
+      if(err){
+        return console.error(err.message);
+      }
+      console.log('Organized_Activity updated.');
+    });
+  }else{
+    console.log('org_act undefined');
+  }
+  /**
+   * Update Social_Group table.
+   */
+  if(req.body.soc_grp !=""){
+    console.log(req.body.soc_grp);
+    console.log(req.session.username);
+    let data = [req.body.soc_grp, req.session.username];
+    let update = 'UPDATE Social_Group SET group_name = ? WHERE social_ID = (SELECT social_ID FROM Employee_Tracking WHERE tracking_ID = (SELECT tracking_ID FROM Employees WHERE Employees.username = ?));';
+    db.run(update, data, function(err){
+      if(err){
+        return console.error(err.message);
+      }
+      console.log('Social_Group updated.');
+    });
+  }else{
+    console.log('soc_grp undefined');
+  }
+  /**
+   * Update Wellness_Goal table.
+   */
+  if(req.body.well_goal != ""){
+    console.log(req.body.well_goal);
+    console.log(req.session.username);
+    let data = [req.body.well_goal, req.session.username];
+    let update = 'UPDATE Wellness_Goal SET goal = ? WHERE goal_ID = (SELECT goal_ID FROM Employee_Tracking WHERE tracking_ID = (SELECT tracking_ID FROM Employees WHERE Employees.username = ?));';
+    db.run(update, data, function(err){
+      if(err){
+        return console.error(err.message);
+      }
+      console.log('Wellness_Goal updated.');
     });
   }else{
     console.log('well_goal undefined');
   }
+  /**
+   * Update Bonus_Activity table.
+   */
   if(req.body.bon_act != undefined){
     console.log(req.body.bon_act);
   }else{
     console.log('bon_act undefined');
   }
   res.redirect('/currentPoints.html')
+  db.close();
+  console.log("Db access was closed.")
 });
 
 /*
