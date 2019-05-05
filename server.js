@@ -79,15 +79,51 @@ app.get('/home', function(req, res){
  * List of update functions for the SQLite3 DB from logPoints.html.
  */
 app.post('/log', function (req, res){
+  if(req.body.prev_act != undefined){
   console.log(req.body.prev_act);
-  console.log(req.body.well_chall);
+  }else{
+    console.log('prev_act undefined');
+  }
+  if(req.body.well_chall != undefined){
+    console.log(req.body.well_chall);
+    }else{
+      console.log('well_chall undefined');
+    }
+  if(req.body.well_wed != undefined){
   console.log(req.body.well_wed);
-  console.log(req.body.well_pres);
-  console.log(req.body.well_class);
-  console.log(req.body.org_act);
-  console.log(req.body.soc_grp);
-  console.log(req.body.well_goal);
-  console.log(req.body.bon_act);
+  }else{
+    console.log('well_wed undefined');
+  }
+  if(req.body.well_pres != undefined){
+    console.log(req.body.well_pres);
+    }else{
+      console.log('well_pres undefined');
+    }
+  if(req.body.well_class != ""){
+    console.log(req.body.well_class);
+  }else{
+    console.log('well_class undefined');
+  }
+  if(req.body.org_act != ""){
+    console.log(req.body.org_act);
+  }else{
+    console.log('org_act undefined');
+  }
+  if(req.body.soc_grp !=""){
+    console.log(req.body.soc_grp);
+  }else{
+    console.log('soc_grp undefined');
+  }
+  if(req.body.well_goal != ""){
+    console.log(req.body.well_goal);
+  }else{
+    console.log('well_goal undefined');
+  }
+  if(req.body.bon_act != undefined){
+    console.log(req.body.bon_act);
+  }else{
+    console.log('bon_act undefined');
+  }
   res.redirect('/currentPoints.html')
 });
 
