@@ -5,15 +5,17 @@ const http = require('http');
 const fs = require('fs');
 var session = require('express-session');
 var bodyParser = require('body-parser');
-const express = require('express');
+var express = require('express');
 var path = require('path');
 const app = express();
+var jsonParser = bodyParser.json({ type: 'application/*+json' } );
 
 app.use(session({
   secret: 'secret',
   resave: true,
   saveUninitialized: true
 }));
+
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
@@ -62,7 +64,7 @@ app.post('/auth', function(req, res){
 });
 
 /*
-  Honestly, not sure what this does.
+  Delete later.
 */
 app.get('/home', function(req, res){
   if(req.session.loggedin){
@@ -71,6 +73,22 @@ app.get('/home', function(req, res){
     res.send('Please login to view this page!');
   }
   res.end();
+});
+
+/**
+ * List of update functions for the SQLite3 DB from logPoints.html.
+ */
+app.post('/log', function (req, res){
+  console.log(req.body.prev_act);
+  console.log(req.body.well_chall);
+  console.log(req.body.well_wed);
+  console.log(req.body.well_pres);
+  console.log(req.body.well_class);
+  console.log(req.body.org_act);
+  console.log(req.body.soc_grp);
+  console.log(req.body.well_goal);
+  console.log(req.body.bon_act);
+  res.redirect('/currentPoints.html')
 });
 
 /*

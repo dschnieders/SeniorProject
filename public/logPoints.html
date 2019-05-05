@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <title>PEC · H&W</title>
-        <link rel="icon" href="images/browser_tab.png">
+        <link rel="icon" href="img/browser_tab.png">
         <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
     
         <!-- Bootstrap core CSS -->
@@ -60,22 +60,22 @@
     
       <div class="starter-template">
         <h1>Please enter your progress</h1>
-            <form action="" style="margin: auto">
+            <form action="/log" method="POST" style="margin: auto">
                     <div class="form-row">
                           <div class="form-group">
-                                <label for="prev_act">Preventive Activities</label>
+                                <label for="prev_act_label">Preventive Activities</label>
                                 <select class="form-control" id="prev_act" name="prev_act" multiple>
-                                  <option>Annual Physical</option>
-                                  <option>Dental Exam (#1)</option>
-                                  <option>Dental Exam (#2)</option>
-                                  <option>Flu Shot</option>
-                                  <option>Complete Biometric Screening, HRA, AND Follow Up</option>
+                                  <option value="ap">Annual Physical</option>
+                                  <option value="de1">Dental Exam (#1)</option>
+                                  <option value="de2">Dental Exam (#2)</option>
+                                  <option value="fs">Flu Shot</option>
+                                  <option value="comBS">Complete Biometric Screening, HRA, AND Follow Up</option>
                                 </select>
                             </div>
                       </div>
                       <div class="form-row">
                         <div class="form-group">
-                          <label for="well_chall">Wellness Challenges</label>
+                          <label for="well_chall_label">Wellness Challenges</label>
                           <select class="form-control" id="well_chall" name ="well_chall" multiple>
                             <option>February</option>
                             <option>April</option>
@@ -88,7 +88,7 @@
                       </div>
                       <div class="form-row">
                         <div class="form-group">
-                          <label for="well_wed">Wellness Wednesday</label>
+                          <label for="well_wed_label">Wellness Wednesday</label>
                           <select class="form-control" id="well_wed" name="well_wed" multiple>
                             <option>February</option>
                             <option>March</option>
@@ -106,8 +106,8 @@
                       </div>
                      <div class="form-row">
                       <div class="form-group">
-                        <label for="well_pres">Wellness Presentations</label>
-                        <select class="form-control" id="well_pres" name="well-pres" multiple>
+                        <label for="well_pres_label">Wellness Presentations</label>
+                        <select class="form-control" id="well_pres" name="well_pres" multiple>
                           <option>February</option>
                           <option>March</option>
                           <option>April</option>
@@ -135,25 +135,25 @@
                       </div> -->
                       <div class="form-row">
                         <div class="form-group">
-                          <label for="well_class">Wellness Class</label>
+                          <label for="well_class_label">Wellness Class</label>
                           <input type="text" class="form-control" id="well_class" name="well_class" placeholder="ie. CPR training">
                         </div>
                       </div>
                       <div class="form-row">
                         <div class="form-group">
-                          <label for="org_act">Organized Activity</label>
+                          <label for="org_act_label">Organized Activity</label>
                           <input type="text" class="form-control" id="org_act" name="org_act" placeholder="ie. church softball">
                         </div>
                       </div>
                       <div class="form-row">
                         <div class="form-group">
-                          <label for="soc_grp">Social Group</label>
+                          <label for="soc_grp_label">Social Group</label>
                           <input type="text" class="form-control" id="soc_grp" name="soc_grp" placeholder="ie. Young Proffesionals of Wichita">
                         </div>
                       </div>
                       <div class="form-row">
                         <div class="form-group">
-                          <label for="well_goal">Wellness Goal</label>
+                          <label for="well_goal_label">Wellness Goal</label>
                           <input type="text" class="form-control" id="well_goal" name="well_goal" placeholder="Goal set by you and H&W Coordinator">
                         </div>
                       </div>
@@ -165,7 +165,7 @@
                       </div> -->
                       <div class="form-row">
                         <div class="form-group">
-                          <label for="bon_act">Bonus Activities</label>
+                          <label for="bon_act_label">Bonus Activities</label>
                           <select class="form-control" id="bon_act" name="bon_act" multiple>
                             <option>Volunteer</option>
                             <option>Try a new workout</option>
@@ -175,7 +175,7 @@
                           </select>
                         </div>
                       </div>
-                    <button type="submit" class="btn btn-primary">Update</button>
+                      <input type="submit" class="btn btn-primary" name="submit">
                   </form>
       </div>
     
