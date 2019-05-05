@@ -238,11 +238,10 @@ app.post('/log', function (req, res){
   /**
    * Update Workouts table.
    */
-  if(req.body.bon_act != undefined){
+  if(req.body.workouts != undefined){
     console.log(req.body.workouts);
     console.log(req.session.username);
     let data = [req.body.workouts, req.session.username];
-    console.log(data);
     let update = 'UPDATE Workouts SET eventDate = ? WHERE workout_ID = (SELECT workout_ID FROM Employee_Tracking WHERE tracking_ID = (SELECT tracking_ID FROM Employees WHERE Employees.username = ?));';
     db.run(update, data, function(err){
       if(err){
@@ -256,7 +255,7 @@ app.post('/log', function (req, res){
   /**
    * Update Yammer table.
    */
-  if(req.body.bon_act != undefined){
+  if(req.body.yammer != undefined){
     console.log(req.body.yammer);
     console.log(req.session.username);
     let data = [req.body.yammer, req.session.username];
