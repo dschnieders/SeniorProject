@@ -33,21 +33,15 @@ let db = new sqlite3.Database('./SQL/SeniorProject.db', (err) =>{
   console.log('Connected to the in-disk SQLite database.');
 });
 
-/* db.serialize(function(){
-  db.get('SELECT * FROM Employees WHERE username LIKE \'%dschnieders%\' AND password LIKE \'%password%\';', function (err, rows){
-    console.log(err);
-    console.log(rows);
-  });
-}); */
-
 /* 
   Log-in function for index.html
 */
 app.post('/auth', function(req, res){
   var username = req.body.username;
   var password = req.body.password;
+  let login_sql = 'SELECT * FROM Employees WHERE username LIKE ? AND password LIKE ?;';
   if(username && password){
-    db.get('SELECT * FROM Employees WHERE username LIKE \'%dschnieders%\' AND password LIKE \'%password%\';', function(err, doc){
+    db.get(login_sql,[username, password], function(err, doc){
       if (doc.length !== 0){
         req.session.loggedin = true;
         req.session.username = username;
@@ -116,6 +110,15 @@ app.post('/log', function (req, res){
   }
   if(req.body.well_goal != ""){
     console.log(req.body.well_goal);
+    let data = [req.body.well_goal, req.session.username];
+    let update_ba = 'UPDATE Wellness_Goal SET goal = ? INNER JOIN Employee_Tracking ON Employee_Tracking.goal_ID = Wellness_Goal.goal_ID INNER JOIN Employees ON Employees.tracking_ID on Employee_Tracking.tracking_ID WHERE Employees.username = ?;';
+
+    db.run(update_ba, data, function(err){
+      if(err){
+        return console.error(err.message);
+      }
+      console.log('Row(s) update: ${this.changes}');
+    });
   }else{
     console.log('well_goal undefined');
   }
