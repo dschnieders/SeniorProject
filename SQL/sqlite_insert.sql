@@ -48,127 +48,59 @@ SELECT * FROM Employee_Tracking;
 
 -- Fix the name of the final column here
 DELETE FROM Preventative_Activities;
-INSERT INTO Preventative_Activities (prevAct_ID, Annual_Physical, Dental_Exam1, Dental_Exam2, Vision_Exam, Flu_Shot, Complete_Screening)
-VALUES ('0', '0', '0', '0', '0', '0', '0'),
-    ('1', '0', '0', '0', '0', '0', '0'),
-    ('2', '0', '0', '0', '0', '0', '0'),
-    ('3', '0', '0', '0', '0', '0', '0');
+INSERT INTO Preventative_Activities (prevAct_ID, activity)
+VALUES ('0', '0'),
+    ('1', '0'),
+    ('2', '0'),
+    ('3', '0');
 SELECT * FROM Preventative_Activities;
 
 DELETE FROM Wellness_Challenges;
 INSERT INTO Wellness_Challenges(wellChall_ID, eventDate)
-VALUES ('0', ''),
-    ('1', ''),
-    ('2', ''),
-    ('3', '');
+VALUES ('0', '0'),
+    ('1', '0'),
+    ('2', '0'),
+    ('3', '0');
 SELECT * FROM Wellness_Challenges;
 
 DELETE FROM Wellness_Wednesday;
 INSERT INTO Wellness_Wednesday(wellWed_ID, eventDate)
-VALUES ('0', ''),
-    ('1', ''),
-    ('2', ''),
-    ('3', '');
+VALUES ('0', '0'),
+    ('1', '0'),
+    ('2', '0'),
+    ('3', '0');
 SELECT * FROM Wellness_Wednesday;
 
 DELETE FROM Wellness_Presentation;
 INSERT INTO Wellness_Presentation(wellPres_ID, eventDate)
-VALUES ('0', ''),
-    ('1', ''),
-    ('2', ''),
-    ('3', '');
+VALUES ('0', '0'),
+    ('1', '0'),
+    ('2', '0'),
+    ('3', '0');
 SELECT * FROM Wellness_Presentation;
 
 DELETE FROM Workouts;
 INSERT INTO Workouts(workout_ID, eventDate)
-VALUES ('0', '2019-2-1'),
-    ('0', '2019-2-3'),
-    ('0', '2019-2-5'),
-    ('0', '2019-2-9'),
-    ('0', '2019-2-11'),
-    ('0', '2019-2-13'),
-    ('0', '2019-2-15'),
-    ('0', '2019-2-17'),
-    ('0', '2019-2-19'),
-    ('0', '2019-2-21'),
-    ('0', '2019-2-23'),
-    ('0', '2019-2-25'),
-    ('0', '2019-3-1'),
-    ('0', '2019-3-3'),
-    ('0', '2019-3-5'),
-    ('0', '2019-3-9'),
-    ('0', '2019-3-11'),
-    ('0', '2019-3-13'),
-    ('0', '2019-3-15'),
-    ('0', '2019-3-17'),
-    ('0', '2019-3-19'),
-    ('0', '2019-3-21'),
-    ('0', '2019-3-23'),
-    ('0', '2019-3-25'),
-    ('0', '2019-4-1'),
-    ('0', '2019-4-3'),
-    ('0', '2019-4-5'),
-    ('0', '2019-4-9'),
-    ('0', '2019-4-11'),
-    ('0', '2019-4-13'),
-    ('0', '2019-4-15'),
-    ('0', '2019-4-17'),
-    ('0', '2019-4-19'),
-    ('0', '2019-4-21'),
-    ('0', '2019-4-23'),
-    ('0', '2019-4-25'),
-    ('1', '2019-2-1'),
-    ('1', '2019-2-3'),
-    ('1', '2019-2-5'),
-    ('1', '2019-2-9'),
-    ('1', '2019-2-11'),
-    ('1', '2019-2-13'),
-    ('1', '2019-2-15'),
-    ('1', '2019-2-17'),
-    ('1', '2019-2-19'),
-    ('1', '2019-2-21'),
-    ('1', '2019-2-23'),
-    ('1', '2019-2-25'),
-    ('1', '2019-3-1'),
-    ('1', '2019-3-3'),
-    ('1', '2019-3-5'),
-    ('1', '2019-3-9'),
-    ('1', '2019-3-11'),
-    ('1', '2019-3-13'),
-    ('1', '2019-3-15'),
-    ('1', '2019-3-17'),
-    ('1', '2019-3-19'),
-    ('1', '2019-3-21'),
-    ('1', '2019-3-23'),
-    ('1', '2019-3-25'),
-    ('1', '2019-4-1'),
-    ('1', '2019-4-3'),
-    ('1', '2019-4-5'),
-    ('1', '2019-4-9'),
-    ('1', '2019-4-11'),
-    ('1', '2019-4-13'),
-    ('1', '2019-4-15'),
-    ('1', '2019-4-17'),
-    ('1', '2019-4-19'),
-    ('1', '2019-4-21'),
-    ('1', '2019-4-23'),
-    ('1', '2019-4-25');
+VALUES ('0', '0'),
+    ('1', '0'),
+    ('2', '0'),
+    ('3', '0');
 SELECT * FROM Workouts;
 
 DELETE FROM Yammer;
 INSERT INTO Yammer(yammer_ID, eventDate)
-VALUES ('0', ''),
-    ('1', ''),
-    ('2', ''),
-    ('3', '');
+VALUES ('0', '0'),
+    ('1', '0'),
+    ('2', '0'),
+    ('3', '0');
 SELECT * FROM Yammer;
 
 DELETE FROM Wellness_Class;
 INSERT INTO Wellness_Class(class_ID, class_name)
-VALUES ('0', ''),
-    ('1', ''),
-    ('2', ''),
-    ('3', '');
+VALUES ('0', '0'),
+    ('1', '0'),
+    ('2', '0'),
+    ('3', '0');
 SELECT * FROM Wellness_Class;
 
 DELETE FROM Organized_Activity;
@@ -194,3 +126,11 @@ VALUES ('0', ''),
     ('2', ''),
     ('3', '');
 SELECT * FROM Wellness_Goal;
+
+DELETE FROM Bonus_Activities;
+INSERT INTO Bonus_Activities(bonus_ID, bonus)
+VALUES ('0', '0'),
+    ('1', '0'),
+    ('2', '0'),
+    ('3', '0');
+SELECT * FROM Bonus_Activities;

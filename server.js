@@ -86,7 +86,16 @@ app.post('/log', function (req, res){
    * Updates Preventative_Activites table.
    */
   if(req.body.prev_act != undefined){
-  console.log(req.body.prev_act);
+    console.log(req.body.prev_act);
+    console.log(req.session.username);
+    let data = [req.body.prev_act.length, req.session.username];
+    let update = 'UPDATE Preventative_Activities SET activity = ? WHERE prevAct_ID = (SELECT prevAct_ID FROM Employee_Tracking WHERE tracking_ID = (SELECT tracking_ID FROM Employees WHERE Employees.username = ?));';
+    db.run(update, data, function(err){
+      if(err){
+        return console.error(err.message);
+      }
+      console.log('Preventative_Activities updated.');
+    });
   }else{
     console.log('prev_act undefined');
   }
@@ -95,6 +104,15 @@ app.post('/log', function (req, res){
    */
   if(req.body.well_chall != undefined){
     console.log(req.body.well_chall);
+    console.log(req.session.username);
+    let data = [req.body.well_chall.length, req.session.username];
+    let update = 'UPDATE Wellness_Challenges SET eventDate = ? WHERE wellChall_ID = (SELECT wellChall_ID FROM Employee_Tracking WHERE tracking_ID = (SELECT tracking_ID FROM Employees WHERE Employees.username = ?));';
+    db.run(update, data, function(err){
+      if(err){
+        return console.error(err.message);
+      }
+      console.log('Wellness_Challenges updated.');
+    });
     }else{
       console.log('well_chall undefined');
   }
@@ -102,7 +120,16 @@ app.post('/log', function (req, res){
    * Updates Wellness_Wednesday table.
    */
   if(req.body.well_wed != undefined){
-  console.log(req.body.well_wed);
+    console.log(req.body.well_wed);
+    console.log(req.session.username);
+    let data = [req.body.well_wed.length, req.session.username];
+    let update = 'UPDATE Wellness_Wednesday SET eventDate = ? WHERE wellWed_ID = (SELECT wellWed_ID FROM Employee_Tracking WHERE tracking_ID = (SELECT tracking_ID FROM Employees WHERE Employees.username = ?));';
+    db.run(update, data, function(err){
+      if(err){
+        return console.error(err.message);
+      }
+      console.log('Wellness_Wednesday updated.');
+    });
   }else{
     console.log('well_wed undefined');
   }
@@ -111,6 +138,15 @@ app.post('/log', function (req, res){
    */
   if(req.body.well_pres != undefined){
     console.log(req.body.well_pres);
+    console.log(req.session.username);
+    let data = [req.body.well_pres.length, req.session.username];
+    let update = 'UPDATE Wellness_Presentation SET eventDate = ? WHERE wellPres_ID = (SELECT wellPres_ID FROM Employee_Tracking WHERE tracking_ID = (SELECT tracking_ID FROM Employees WHERE Employees.username = ?));';
+    db.run(update, data, function(err){
+      if(err){
+        return console.error(err.message);
+      }
+      console.log('Wellness_Presentation updated.');
+    });
     }else{
       console.log('well_pres undefined');
   }
@@ -126,7 +162,7 @@ app.post('/log', function (req, res){
       if(err){
         return console.error(err.message);
       }
-      console.log('Wellness_Class updated.');
+      console.log('Organized_Activity updated.');
     });
   }else{
     console.log('well_class undefined');
@@ -187,8 +223,52 @@ app.post('/log', function (req, res){
    */
   if(req.body.bon_act != undefined){
     console.log(req.body.bon_act);
+    console.log(req.session.username);
+    let data = [req.body.bon_act.length, req.session.username];
+    let update = 'UPDATE Bonus_Activities SET bonus = ? WHERE bonus_ID = (SELECT bonus_ID FROM Employee_Tracking WHERE tracking_ID = (SELECT tracking_ID FROM Employees WHERE Employees.username = ?));';
+    db.run(update, data, function(err){
+      if(err){
+        return console.error(err.message);
+      }
+      console.log('Bonus_Activities updated.');
+    });
   }else{
     console.log('bon_act undefined');
+  }
+  /**
+   * Update Workouts table.
+   */
+  if(req.body.bon_act != undefined){
+    console.log(req.body.workouts);
+    console.log(req.session.username);
+    let data = [req.body.workouts, req.session.username];
+    console.log(data);
+    let update = 'UPDATE Workouts SET eventDate = ? WHERE workout_ID = (SELECT workout_ID FROM Employee_Tracking WHERE tracking_ID = (SELECT tracking_ID FROM Employees WHERE Employees.username = ?));';
+    db.run(update, data, function(err){
+      if(err){
+        return console.error(err.message);
+      }
+      console.log('Workouts updated.');
+    });
+  }else{
+    console.log('workouts undefined.');
+  }
+  /**
+   * Update Yammer table.
+   */
+  if(req.body.bon_act != undefined){
+    console.log(req.body.yammer);
+    console.log(req.session.username);
+    let data = [req.body.yammer, req.session.username];
+    let update = 'UPDATE Yammer SET eventDate = ? WHERE yammer_ID = (SELECT yammer_ID FROM Employee_Tracking WHERE tracking_ID = (SELECT tracking_ID FROM Employees WHERE Employees.username = ?));';
+    db.run(update, data, function(err){
+      if(err){
+        return console.error(err.message);
+      }
+      console.log('Yammer updated.');
+    });
+  }else{
+    console.log('yammer undefined');
   }
   res.redirect('/currentPoints.html')
   db.close();

@@ -57,7 +57,6 @@
     </nav>
     
     <main role="main" class="container">
-    
       <div class="starter-template">
         <h1>Please enter your progress</h1>
             <form action="/log" method="POST" style="margin: auto">
@@ -77,12 +76,12 @@
                         <div class="form-group">
                           <label for="well_chall_label">Wellness Challenges</label>
                           <select class="form-control" id="well_chall" name ="well_chall" multiple>
-                            <option>February</option>
-                            <option>April</option>
-                            <option>June</option>
-                            <option>August</option>
-                            <option>October</option>
-                            <option>November & December</option>
+                            <option value="February">February</option>
+                            <option value="April">April</option>
+                            <option value="June">June</option>
+                            <option value="August">August</option>
+                            <option value="October">October</option>
+                            <option value="Nov&Dec">November & December</option>
                           </select>
                     </div>
                       </div>
@@ -90,17 +89,17 @@
                         <div class="form-group">
                           <label for="well_wed_label">Wellness Wednesday</label>
                           <select class="form-control" id="well_wed" name="well_wed" multiple>
-                            <option>February</option>
-                            <option>March</option>
-                            <option>April</option>
-                            <option>May</option>
-                            <option>June</option>
-                            <option>July</option>
-                            <option>August</option>
-                            <option>September</option>
-                            <option>October</option>
-                            <option>November</option>
-                            <option>December</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
                           </select>
                     </div>
                       </div>
@@ -108,31 +107,31 @@
                       <div class="form-group">
                         <label for="well_pres_label">Wellness Presentations</label>
                         <select class="form-control" id="well_pres" name="well_pres" multiple>
-                          <option>February</option>
-                          <option>March</option>
-                          <option>April</option>
-                          <option>May</option>
-                          <option>June</option>
-                          <option>July</option>
-                          <option>August</option>
-                          <option>September</option>
-                          <option>October</option>
-                          <option>November</option>
+                          <option value="February">February</option>
+                          <option value="March">March</option>
+                          <option value="April">April</option>
+                          <option value="May">May</option>
+                          <option value="June">June</option>
+                          <option value="July">July</option>
+                          <option value="August">August</option>
+                          <option value="September">September</option>
+                          <option value="October">October</option>
+                          <option value="November">November</option>
                         </select>
                   </div>
                      </div>
-                      <!-- <div class="form-row">
+                      <div class="form-row">
                         <div class="form-group">
                           <label for="workouts">Workouts</label>
-                          <input type="text" class="form-control" id="workouts" name="workouts" placeholder="Figure out how to do this">
+                          <input type="number" class="form-control" id="workouts" name="workouts" value="0">
                         </div>
-                      </div> -->
-                      <!-- <div class="form-row">
+                      </div>
+                      <div class="form-row">
                         <div class="form-group">
                           <label for="yammer">Yammer</label>
-                          <input type="text" class="form-control" id="yammer" name="yammer" placeholder="Figure out how to do this">
+                          <input type="number" class="form-control" id="yammer" name="yammer" value="0">
                         </div>
-                      </div> -->
+                      </div> 
                       <div class="form-row">
                         <div class="form-group">
                           <label for="well_class_label">Wellness Class</label>
@@ -157,12 +156,6 @@
                           <input type="text" class="form-control" id="well_goal" name="well_goal" placeholder="Goal set by you and H&W Coordinator">
                         </div>
                       </div>
-                      <!-- <div class="form-row">
-                        <div class="form-group">
-                          <label for="goal_meet">Goal Meetings</label>
-                          <input type="text" class="form-control" id="goal_meet" name="goal_meet" placeholder="Figure out how to do this">
-                        </div>
-                      </div> -->
                       <div class="form-row">
                         <div class="form-group">
                           <label for="bon_act_label">Bonus Activities</label>
