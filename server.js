@@ -274,6 +274,7 @@ app.post('/log', function (req, res){
   console.log("Db access was closed.")
 });
 
+
 /*
   Serves index.html as the landing page.
 */
