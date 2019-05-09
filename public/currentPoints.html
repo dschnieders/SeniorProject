@@ -15,14 +15,20 @@
     
     
         <style>
-          .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-          }
+          html, body{
+              height: 100%;
+              width: 100%;
+              color: #222
+            }
+            .navbar{
+              padding: .8rem;
+            }
+            .navbar-nav li{
+              padding-right: 20px;
+            }
+            .nav-link{
+              font-size: 1.1em !important;
+            }
     
           @media (min-width: 768px) {
             .bd-placeholder-img-lg {
@@ -37,29 +43,29 @@
         <!-- Custom styles for this template -->
         <link href="starter-template.css" rel="stylesheet">
       </head>
-      <body style="">
+      <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-default navbar-static-top">
-      <a class="navbar-brand" href="home.html">Health And Wellness</a>
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="navbar-collapse collapse" id="navbarsExampleDefault" style="">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="incentives.html">Incentives</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="logPoints.html">Log Points</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="currentPoints.html">Current Points</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Logout</a>
-          </li>
-        </ul>
-      </div>
+  <a class="navbar-brand" href="home.html">Health And Wellness</a>
+  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="incentives.html">Incentives</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logPoints.html">Log Points</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="currentPoints.html">Current Points</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Logout</a>
+      </li>
+    </ul>
+  </div>
     </nav>
     
     <main role="main" class="container">
@@ -90,7 +96,7 @@
             </div>
           <hr class="my-4">
         </div>
-
+        <!-- Remove later. -->
         <pre id="getResponse"></pre>
     </main>          
           <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>

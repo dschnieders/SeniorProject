@@ -278,13 +278,17 @@ app.post('/log', function (req, res){
  * Send JSON file to currentPoints.html
 */
 app.get('/ajaxcall', function(req, res){
-  var data = {
-    contactId: 1,
-    firstname: 'John',
-    lastName: 'Doe',
-    email: 'john.doe@domain.com',
-    phone: '316.737.1452'
-  };
+  var data = ([
+
+    ['Task', 'Hours per Day'],
+['PEC', 8],
+['Is', 2],
+['But', 2],
+['A', 2],
+['Temp', 2],
+['Job', 8]
+  ]
+  );
   res.send(data);
 })
 
