@@ -274,6 +274,14 @@ app.post('/log', function (req, res){
   console.log("Db access was closed.")
 });
 
+/**
+ * Send JSON file to currentPoints.html
+*/
+ app.post('/current', function(req, res){
+  var test = req.body.pointsToNextTier;
+  console.log(test);
+  res.redirect('/currentPoints.html')
+ });
 
 /*
   Serves index.html as the landing page.
