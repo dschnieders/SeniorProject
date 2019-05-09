@@ -36,7 +36,7 @@ app.post('/auth', function(req, res){
     if (err){
       return console.error(err.message);
     }
-    console.log('Connected to the in-disk SQLite database.');
+    console.log('Connected to the in-disk SQLite database. (Auth)');
   });
   var username = req.body.username;
   var password = req.body.password;
@@ -80,7 +80,7 @@ app.post('/log', function (req, res){
     if (err){
       return console.error(err.message);
     }
-    console.log('Connected to the in-disk SQLite database.');
+    console.log('Connected to the in-disk SQLite database. (Log)');
   });
   /**
    * Updates Preventative_Activites table.
@@ -275,22 +275,41 @@ app.post('/log', function (req, res){
 });
 
 /**
- * Send JSON file to currentPoints.html
+ * Send JSON file to currentPoints.html via AJAX
 */
 app.get('/ajaxcall', function(req, res){
-  var data = ([
+  let db = new sqlite3.Database('./SQL/SeniorProject.db', (err) =>{
+    if (err){
+      return console.error(err.message);
+    }
+    console.log('Connected to the in-disk SQLite database. (AJAX call)');
+  });
+  
+  /**
+   * Gets value of Preventative_Activities for the logged in user.
+   */
+  var pa_Select = 'SELECT activity FROM Preventative_Activities INNER JOIN Employee_Tracking ON Preventative_Activities.prevAct_ID = Employee_Tracking.prevAct_ID INNER JOIN Employees ON Employee_Tracking.tracking_ID = Employees.tracking_ID WHERE Employees.username = ?';
+  var data = [];
+  db.each(pa_Select, req.session.username, (error, row) =>{
+      if (error){
+        return console.error(err.message);
+      }
+      console.log(row.activity);
+  });
 
-    ['Task', 'Hours per Day'],
-['PEC', 8],
-['Is', 2],
-['But', 2],
-['A', 2],
-['Temp', 2],
-['Job', 8]
-  ]
-  );
+  var data = ([
+    ['Category', 'Points'],
+    ['Preventive Activities', 0],
+    ['Is', 2],
+    ['But', 2],
+    ['A', 2],
+    ['Temp', 2],
+    ['Job', 8]
+  ]);
+  
   res.send(data);
-})
+  db.close();
+});
 
 /*
   Serves index.html as the landing page.
