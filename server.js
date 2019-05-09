@@ -290,7 +290,7 @@ app.get('/ajaxcall', function(req, res){
    */
   var pa_Select = 'SELECT activity FROM Preventative_Activities INNER JOIN Employee_Tracking ON Preventative_Activities.prevAct_ID = Employee_Tracking.prevAct_ID INNER JOIN Employees ON Employee_Tracking.tracking_ID = Employees.tracking_ID WHERE Employees.username = ?';
   var data = [];
-  db.each(pa_Select, req.session.username, (error, row) =>{
+  db.get(pa_Select, req.session.username, (error, row) =>{
       if (error){
         return console.error(err.message);
       }
@@ -300,11 +300,16 @@ app.get('/ajaxcall', function(req, res){
   var data = ([
     ['Category', 'Points'],
     ['Preventive Activities', 0],
-    ['Is', 2],
-    ['But', 2],
-    ['A', 2],
-    ['Temp', 2],
-    ['Job', 8]
+    ['Wellness Challenges', 2],
+    ['Wellness Wednesday', 2],
+    ['Wellness Presentations', 2],
+    ['Workouts', 2],
+    ['Yammer', 8],
+    ['Wellness Class', 10],
+    ['Organized Activity', 5],
+    ['Social Group', 5],
+    ['Wellness Goal', 0],
+    ['Bonus Activities', 15]
   ]);
   
   res.send(data);
