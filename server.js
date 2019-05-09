@@ -288,31 +288,59 @@ app.get('/ajaxcall', function(req, res){
   /**
    * Gets value of Preventative_Activities for the logged in user.
    */
-  var pa_Select = 'SELECT activity FROM Preventative_Activities INNER JOIN Employee_Tracking ON Preventative_Activities.prevAct_ID = Employee_Tracking.prevAct_ID INNER JOIN Employees ON Employee_Tracking.tracking_ID = Employees.tracking_ID WHERE Employees.username = ?';
-  var data = [];
-  db.get(pa_Select, req.session.username, (error, row) =>{
-      if (error){
-        return console.error(err.message);
-      }
-      console.log(row.activity);
-  });
+    var pa_Select = 'SELECT activity FROM Preventative_Activities INNER JOIN Employee_Tracking ON Preventative_Activities.prevAct_ID = Employee_Tracking.prevAct_ID INNER JOIN Employees ON Employee_Tracking.tracking_ID = Employees.tracking_ID WHERE Employees.username = ?';
+    var wc_select = 'SELECT activity FROM Preventative_Activities INNER JOIN Employee_Tracking ON Preventative_Activities.prevAct_ID = Employee_Tracking.prevAct_ID INNER JOIN Employees ON Employee_Tracking.tracking_ID = Employees.tracking_ID WHERE Employees.username = ?';
+    var ww_select = 'SELECT activity FROM Preventative_Activities INNER JOIN Employee_Tracking ON Preventative_Activities.prevAct_ID = Employee_Tracking.prevAct_ID INNER JOIN Employees ON Employee_Tracking.tracking_ID = Employees.tracking_ID WHERE Employees.username = ?';
+    var wp_select = 'SELECT activity FROM Preventative_Activities INNER JOIN Employee_Tracking ON Preventative_Activities.prevAct_ID = Employee_Tracking.prevAct_ID INNER JOIN Employees ON Employee_Tracking.tracking_ID = Employees.tracking_ID WHERE Employees.username = ?';
+    var w_select = 'SELECT activity FROM Preventative_Activities INNER JOIN Employee_Tracking ON Preventative_Activities.prevAct_ID = Employee_Tracking.prevAct_ID INNER JOIN Employees ON Employee_Tracking.tracking_ID = Employees.tracking_ID WHERE Employees.username = ?';
+    var y_select = 'SELECT activity FROM Preventative_Activities INNER JOIN Employee_Tracking ON Preventative_Activities.prevAct_ID = Employee_Tracking.prevAct_ID INNER JOIN Employees ON Employee_Tracking.tracking_ID = Employees.tracking_ID WHERE Employees.username = ?';
+    var wlc_select = 'SELECT activity FROM Preventative_Activities INNER JOIN Employee_Tracking ON Preventative_Activities.prevAct_ID = Employee_Tracking.prevAct_ID INNER JOIN Employees ON Employee_Tracking.tracking_ID = Employees.tracking_ID WHERE Employees.username = ?';
+    var oa_select = 'SELECT activity FROM Preventative_Activities INNER JOIN Employee_Tracking ON Preventative_Activities.prevAct_ID = Employee_Tracking.prevAct_ID INNER JOIN Employees ON Employee_Tracking.tracking_ID = Employees.tracking_ID WHERE Employees.username = ?';
+    var sg_select = 'SELECT activity FROM Preventative_Activities INNER JOIN Employee_Tracking ON Preventative_Activities.prevAct_ID = Employee_Tracking.prevAct_ID INNER JOIN Employees ON Employee_Tracking.tracking_ID = Employees.tracking_ID WHERE Employees.username = ?';
+    var wg_select = 'SELECT activity FROM Preventative_Activities INNER JOIN Employee_Tracking ON Preventative_Activities.prevAct_ID = Employee_Tracking.prevAct_ID INNER JOIN Employees ON Employee_Tracking.tracking_ID = Employees.tracking_ID WHERE Employees.username = ?';
+    var ba_select = 'SELECT activity FROM Preventative_Activities INNER JOIN Employee_Tracking ON Preventative_Activities.prevAct_ID = Employee_Tracking.prevAct_ID INNER JOIN Employees ON Employee_Tracking.tracking_ID = Employees.tracking_ID WHERE Employees.username = ?';
 
-  var data = ([
-    ['Category', 'Points'],
-    ['Preventive Activities', 0],
-    ['Wellness Challenges', 2],
-    ['Wellness Wednesday', 2],
-    ['Wellness Presentations', 2],
-    ['Workouts', 2],
-    ['Yammer', 8],
-    ['Wellness Class', 10],
-    ['Organized Activity', 5],
-    ['Social Group', 5],
-    ['Wellness Goal', 0],
-    ['Bonus Activities', 15]
-  ]);
-  
-  res.send(data);
+    var posts = [];
+    posts.push(['Category', 'Points']);
+    db.serialize(function(err, res) {
+        db.each(pa_Select, req.session.username, function(err, row) {
+            posts.push(['Preventive Activities', row.activity])
+        }), 
+        db.each(wc_select, req.session.username, function(err, row){
+            posts.push(['Wellness Challenges', row.activity])
+        }),
+        db.each(ww_select, req.session.username, function(err, row){
+          posts.push(['Wellness Wednesday', row.activity])
+        }),
+        db.each(wp_select, req.session.username, function(err, row){
+          posts.push(['Wellness Presentations', row.activity])
+        }),
+        db.each(w_select, req.session.username, function(err, row){
+          posts.push(['Workouts', row.activity])
+        }),
+        db.each(y_select, req.session.username, function(err, row){
+          posts.push(['Yammer', row.activity])
+        }),
+        db.each(wlc_select, req.session.username, function(err, row){
+          posts.push(['Wellness Class', row.activity])
+        }),
+        db.each(oa_select, req.session.username, function(err, row){
+          posts.push(['Organized Activity', row.activity])
+        }),
+        db.each(sg_select, req.session.username, function(err, row){
+          posts.push(['Social Group', row.activity])
+        }),        
+        db.each(wg_select, req.session.username, function(err, row){
+          posts.push(['Wellness Group', row.activity])
+        }),
+        db.each(ba_select, req.session.username, function(err, row){
+          posts.push(['Bonus Activities', row.activity])
+          console.log(posts);
+        }),
+        function(err, res) {
+          res.send(posts);
+        };
+    });
   db.close();
 });
 
