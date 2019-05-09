@@ -6,33 +6,10 @@
         <title>PEC · H&W</title>
         <link rel="icon" href="img/browser_tab.png">
         <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script type="text/javascript">
-          // Load google charts
-          google.charts.load('current', {'packages':['corechart']});
-          google.charts.setOnLoadCallback(drawChart);
-          
-          // Draw the chart and set the chart values
-          function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-            ['Task', 'Hours per Day'],
-            ['Work', 8],
-            ['Friends', 2],
-            ['Eat', 2],
-            ['TV', 2],
-            ['Gym', 2],
-            ['Sleep', 8]
-          ]);
-
-            // Optional; add a title and set the width and height of the chart
-            var options = {'title':'Your Current Points', 'width':550, 'height':400};
-          
-            // Display the chart inside the <div> element with id="piechart"
-            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-            chart.draw(data, options);
-          }
-          </script>
+        <script type="text/javascript" src="drawGraph.js"></script>
         <!-- Bootstrap core CSS -->
         <link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
@@ -107,18 +84,17 @@
                         <h2>Points summary:</h2>
                         <p id="currentPoints" name="currentPoints">currentPoints</p>
                         <p id="pointsToNextTier">pointsToNextTier</p>
-                        <form action="current" method="post">
-                            <input type="submit" class="btn btn-primary" name="update" value="Update" title="Update">
-                        </form>
                       </div>
                 <div class="col-lg-6" id="piechart"></div>
               </div>
             </div>
           <hr class="my-4">
         </div>
-    </main>
-          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-          <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+
+        <pre id="getResponse"></pre>
+    </main>          
+          <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+          <script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body></html>

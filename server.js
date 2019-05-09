@@ -277,11 +277,16 @@ app.post('/log', function (req, res){
 /**
  * Send JSON file to currentPoints.html
 */
- app.post('/current', function(req, res){
-  var test = req.body.pointsToNextTier;
-  console.log(test);
-  res.redirect('/currentPoints.html')
- });
+app.get('/ajaxcall', function(req, res){
+  var data = {
+    contactId: 1,
+    firstname: 'John',
+    lastName: 'Doe',
+    email: 'john.doe@domain.com',
+    phone: '316.737.1452'
+  };
+  res.send(data);
+})
 
 /*
   Serves index.html as the landing page.
