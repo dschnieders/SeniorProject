@@ -1,49 +1,74 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>PEC · H&W</title>
+    <link rel="icon" href="img/browser_tab.png" />
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/4.3/examples/starter-template/"
+    />
 
-    <html lang="en"><head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <title>PEC · H&W</title>
-        <link rel="icon" href="img/browser_tab.png">
-        <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
-    
-        <!-- Bootstrap core CSS -->
-    <link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    
-        <style>
-             html, body{
-              height: 100%;
-              width: 100%;
-              color: #222
-            }
-            .navbar{
-              padding: .8rem;
-            }
-            .navbar-nav li{
-              padding-right: 20px;
-            }
-            .nav-link{
-              font-size: 1.1em !important;
-            }
-    
-          @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-              font-size: 3.5rem;
-            }
-          }
-          
-        </style>
-        <!-- Custom styles for this template -->
-        <link href="starter-template.css" rel="stylesheet">
-      </head>
-      <body style="">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-default navbar-static-top">
+    <!-- Bootstrap core CSS -->
+    <link
+      href="/docs/4.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        color: #222;
+      }
+      .navbar {
+        padding: 0.8rem;
+      }
+      .navbar-nav li {
+        padding-right: 20px;
+      }
+      .nav-link {
+        font-size: 1.1em !important;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet" />
+  </head>
+  <body style="">
+    <nav
+      class="navbar navbar-expand-md navbar-dark bg-dark navbar-default navbar-static-top"
+    >
       <a class="navbar-brand" href="home.html">Health And Wellness</a>
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler collapsed"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
-    
+
       <div class="navbar-collapse collapse" id="navbarsExampleDefault" style="">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
@@ -61,126 +86,211 @@
         </ul>
       </div>
     </nav>
-    
+
     <main role="main" class="container">
       <div class="starter-template">
         <h1>Please enter your progress</h1>
-            <form action="/log" method="POST" style="margin: auto">
-                    <div class="form-row">
-                          <div class="form-group">
-                                <label for="prev_act_label">Preventive Activities</label>
-                                <select class="form-control" id="prev_act" name="prev_act" multiple>
-                                  <option value="Annual_Physical">Annual Physical</option>
-                                  <option value="Dental_Exam1">Dental Exam (#1)</option>
-                                  <option value="Dental_Exam2">Dental Exam (#2)</option>
-                                  <option value="Flu_Shot">Flu Shot</option>
-                                  <option value="Complete_Screening">Complete Biometric Screening, HRA, AND Follow Up</option>
-                                </select>
-                            </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="form-group">
-                          <label for="well_chall_label">Wellness Challenges</label>
-                          <select class="form-control" id="well_chall" name ="well_chall" multiple>
-                            <option value="February">February</option>
-                            <option value="April">April</option>
-                            <option value="June">June</option>
-                            <option value="August">August</option>
-                            <option value="October">October</option>
-                            <option value="Nov&Dec">November & December</option>
-                          </select>
-                    </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="form-group">
-                          <label for="well_wed_label">Wellness Wednesday</label>
-                          <select class="form-control" id="well_wed" name="well_wed" multiple>
-                            <option value="February">February</option>
-                            <option value="March">March</option>
-                            <option value="April">April</option>
-                            <option value="May">May</option>
-                            <option value="June">June</option>
-                            <option value="July">July</option>
-                            <option value="August">August</option>
-                            <option value="September">September</option>
-                            <option value="October">October</option>
-                            <option value="November">November</option>
-                            <option value="December">December</option>
-                          </select>
-                    </div>
-                      </div>
-                     <div class="form-row">
-                      <div class="form-group">
-                        <label for="well_pres_label">Wellness Presentations</label>
-                        <select class="form-control" id="well_pres" name="well_pres" multiple>
-                          <option value="February">February</option>
-                          <option value="March">March</option>
-                          <option value="April">April</option>
-                          <option value="May">May</option>
-                          <option value="June">June</option>
-                          <option value="July">July</option>
-                          <option value="August">August</option>
-                          <option value="September">September</option>
-                          <option value="October">October</option>
-                          <option value="November">November</option>
-                        </select>
-                  </div>
-                     </div>
-                      <div class="form-row">
-                        <div class="form-group">
-                          <label for="workouts">Workouts</label>
-                          <input type="number" class="form-control" id="workouts" name="workouts" value="0">
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="form-group">
-                          <label for="yammer">Yammer</label>
-                          <input type="number" class="form-control" id="yammer" name="yammer" value="0">
-                        </div>
-                      </div> 
-                      <div class="form-row">
-                        <div class="form-group">
-                          <label for="well_class_label">Wellness Class</label>
-                          <input type="text" class="form-control" id="well_class" name="well_class" placeholder="ie. CPR training">
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="form-group">
-                          <label for="org_act_label">Organized Activity</label>
-                          <input type="text" class="form-control" id="org_act" name="org_act" placeholder="ie. church softball">
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="form-group">
-                          <label for="soc_grp_label">Social Group</label>
-                          <input type="text" class="form-control" id="soc_grp" name="soc_grp" placeholder="ie. Young Proffesionals of Wichita">
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="form-group">
-                          <label for="well_goal_label">Wellness Goal</label>
-                          <input type="text" class="form-control" id="well_goal" name="well_goal" placeholder="Goal set by you and H&W Coordinator">
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="form-group">
-                          <label for="bon_act_label">Bonus Activities</label>
-                          <select class="form-control" id="bon_act" name="bon_act" multiple>
-                            <option value="volunteer">Volunteer</option>
-                            <option value="new_workout">Try a new workout</option>
-                            <option value="donate_blood">Donate blood</option>
-                            <option value="401k_meeting">401k meeting</option>
-                            <option value="benefits_meeting">Benefits meeting</option>
-                          </select>
-                        </div>
-                      </div>
-                      <input type="submit" class="btn btn-primary" name="submit" value="Submit">
-                  </form>
+        <form action="/log" method="POST" style="margin: auto">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prev_act_label">Preventive Activities</label>
+              <select
+                class="form-control"
+                id="prev_act"
+                name="prev_act"
+                multiple
+              >
+                <option value="Annual_Physical">Annual Physical</option>
+                <option value="Dental_Exam1">Dental Exam (#1)</option>
+                <option value="Dental_Exam2">Dental Exam (#2)</option>
+                <option value="Flu_Shot">Flu Shot</option>
+                <option value="Complete_Screening"
+                  >Complete Biometric Screening, HRA, AND Follow Up</option
+                >
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="well_chall_label">Wellness Challenges</label>
+              <select
+                class="form-control"
+                id="well_chall"
+                name="well_chall"
+                multiple
+              >
+                <option value="February">February</option>
+                <option value="April">April</option>
+                <option value="June">June</option>
+                <option value="August">August</option>
+                <option value="October">October</option>
+                <option value="Nov&Dec">November & December</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="well_wed_label">Wellness Wednesday</label>
+              <select
+                class="form-control"
+                id="well_wed"
+                name="well_wed"
+                multiple
+              >
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="well_pres_label">Wellness Presentations</label>
+              <select
+                class="form-control"
+                id="well_pres"
+                name="well_pres"
+                multiple
+              >
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="workouts">Workouts</label>
+              <input
+                type="number"
+                class="form-control"
+                id="workouts"
+                name="workouts"
+                value="0"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="yammer">Yammer</label>
+              <input
+                type="number"
+                class="form-control"
+                id="yammer"
+                name="yammer"
+                value="0"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="well_class_label">Wellness Class</label>
+              <input
+                type="text"
+                class="form-control"
+                id="well_class"
+                name="well_class"
+                placeholder="ie. CPR training"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="org_act_label">Organized Activity</label>
+              <input
+                type="text"
+                class="form-control"
+                id="org_act"
+                name="org_act"
+                placeholder="ie. church softball"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="soc_grp_label">Social Group</label>
+              <input
+                type="text"
+                class="form-control"
+                id="soc_grp"
+                name="soc_grp"
+                placeholder="ie. Young Proffesionals of Wichita"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="well_goal_label">Wellness Goal</label>
+              <input
+                type="text"
+                class="form-control"
+                id="well_goal"
+                name="well_goal"
+                placeholder="Goal set by you and H&W Coordinator"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="bon_act_label">Bonus Activities</label>
+              <select class="form-control" id="bon_act" name="bon_act" multiple>
+                <option value="volunteer">Volunteer</option>
+                <option value="new_workout">Try a new workout</option>
+                <option value="donate_blood">Donate blood</option>
+                <option value="401k_meeting">401k meeting</option>
+                <option value="benefits_meeting">Benefits meeting</option>
+              </select>
+            </div>
+          </div>
+          <input
+            type="submit"
+            class="btn btn-primary"
+            name="submit"
+            value="Submit"
+          />
+        </form>
       </div>
-    
-    </main><!-- /.container -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-          <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    </body></html>
+    </main>
+    <!-- /.container -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>'
+        );</script
+    ><script
+      src="/docs/4.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

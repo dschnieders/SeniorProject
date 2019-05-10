@@ -1,90 +1,154 @@
-<html lang="en"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/4.3/examples/starter-template/"
+    />
     <title>PEC · H&W</title>
-    <link rel="icon" href="img/browser_tab.png">
+    <link rel="icon" href="img/browser_tab.png" />
     <!-- Bootstrap core CSS -->
-<link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link
+      href="/docs/4.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
     <style>
-         html, body{
-      height: 100%;
-      width: 100%;
-      color: #222
-    }
-    .navbar{
-      padding: .8rem;
-    }
-    .navbar-nav li{
-      padding-right: 20px;
-    }
-    .nav-link{
-      font-size: 1.1em !important;
-    }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        color: #222;
+      }
+      .navbar {
+        padding: 0.8rem;
+      }
+      .navbar-nav li {
+        padding-right: 20px;
+      }
+      .nav-link {
+        font-size: 1.1em !important;
+      }
       .login-form {
-			width: 50%;
-			margin: 0 auto;
-			font-family: Tahoma, Geneva, sans-serif;
-		}
-		.login-form h1 {
-			text-align: center;
-			color: #4d4d4d;
-			font-size: 24px;
-			padding: 20px 0 20px 0;
-		}
-		.login-form input[type="password"],
-		.login-form input[type="text"] {
-			width: 100%;
-			padding: 15px;
-			border: 1px solid #dddddd;
-			margin-bottom: 15px;
-			box-sizing:border-box;
-		}
-		.login-form input[type="submit"] {
-			width: 100%;
-			padding: 15px;
-			background-color: #535b63;
-			border: 0;
-			box-sizing: border-box;
-			cursor: pointer;
-			font-weight: bold;
-			color: #ffffff;
-		}
+        width: 50%;
+        margin: 0 auto;
+        font-family: Tahoma, Geneva, sans-serif;
+      }
+      .login-form h1 {
+        text-align: center;
+        color: #4d4d4d;
+        font-size: 24px;
+        padding: 20px 0 20px 0;
+      }
+      .login-form input[type="password"],
+      .login-form input[type="text"] {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #dddddd;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+      }
+      .login-form input[type="submit"] {
+        width: 100%;
+        padding: 15px;
+        background-color: #535b63;
+        border: 0;
+        box-sizing: border-box;
+        cursor: pointer;
+        font-weight: bold;
+        color: #ffffff;
+      }
     </style>
     <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
+    <link href="starter-template.css" rel="stylesheet" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-default navbar-static-top">
-  <a class="navbar-brand" href="index.html">Health And Wellness</a>
-  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-</nav>
+    <nav
+      class="navbar navbar-expand-md navbar-dark bg-dark navbar-default navbar-static-top"
+    >
+      <a class="navbar-brand" href="index.html">Health And Wellness</a>
+      <button
+        class="navbar-toggler collapsed"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
 
-<main role="main" class="container">
-
-        <div class="login-form">       
-                    <h1>Please Login</h1>
-                  <form action="auth" method="POST">
-                    <div class="form-row">
-                      <input type="text" class="form-control" name="username" placeholder="Username" required>
-                    </div>
-                    <div class="form-row">
-                      <input type="password" class="form-control" name="password" placeholder="Password" required>
-                    </div>
-                    <div class="form-row">
-                      <input type="submit"class="btn btn-primary" name="submit" value="Login">
-                    </div>
-                  </form>
-              </div>
-
-</main>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body></html>
+    <main role="main" class="container">
+      <div class="login-form">
+        <h1>Please Login</h1>
+        <form action="auth" method="POST">
+          <div class="form-row">
+            <input
+              type="text"
+              class="form-control"
+              name="username"
+              placeholder="Username"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <input
+              type="submit"
+              class="btn btn-primary"
+              name="submit"
+              value="Login"
+            />
+          </div>
+        </form>
+      </div>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>'
+        );</script
+    ><script
+      src="/docs/4.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

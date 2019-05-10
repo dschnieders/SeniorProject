@@ -1,106 +1,159 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>PEC · H&W</title>
+    <link rel="icon" href="img/browser_tab.png" />
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/4.3/examples/starter-template/"
+    />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
+    ></script>
+    <script type="text/javascript" src="drawGraph.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link
+      href="/docs/4.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
-<html lang="en"><head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <title>PEC · H&W</title>
-        <link rel="icon" href="img/browser_tab.png">
-        <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script type="text/javascript" src="drawGraph.js"></script>
-        <!-- Bootstrap core CSS -->
-        <link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    
-        <style>
-          html, body{
-              height: 100%;
-              width: 100%;
-              color: #222
-            }
-            .navbar{
-              padding: .8rem;
-            }
-            .navbar-nav li{
-              padding-right: 20px;
-            }
-            .nav-link{
-              font-size: 1.1em !important;
-            }
-    
-          @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-              font-size: 3.5rem;
-            }
-          }
-          .jumbotron{
-            padding: 1rem;
-            border-radius: 0;
-          }
-        </style>
-        <!-- Custom styles for this template -->
-        <link href="starter-template.css" rel="stylesheet">
-      </head>
-      <body>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-default navbar-static-top">
-  <a class="navbar-brand" href="home.html">Health And Wellness</a>
-  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <style>
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        color: #222;
+      }
+      .navbar {
+        padding: 0.8rem;
+      }
+      .navbar-nav li {
+        padding-right: 20px;
+      }
+      .nav-link {
+        font-size: 1.1em !important;
+      }
 
-  <div class="navbar-collapse collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="incentives.html">Incentives</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="logPoints.html">Log Points</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="currentPoints.html">Current Points</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">Logout</a>
-      </li>
-    </ul>
-  </div>
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .jumbotron {
+        padding: 1rem;
+        border-radius: 0;
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-md navbar-dark bg-dark navbar-default navbar-static-top"
+    >
+      <a class="navbar-brand" href="home.html">Health And Wellness</a>
+      <button
+        class="navbar-toggler collapsed"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="incentives.html">Incentives</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logPoints.html">Log Points</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="currentPoints.html">Current Points</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Logout</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-    
-    <main role="main" class="container">
 
-    <!-- Another banner. -->
-    <div class="container-fluid padding">
-      <div class="row welcome text-center">
-      <div class="col-12">
-        <h1 class="display-4">Your Current Health and Wellness Points</h1>
-      </div>
-      <hr>
-      <div class="col-12">
-        <p class="lead">Awards will be distributed quarterly as the levels are earned. Rewards are chosen at the end of each quarter. Points are evaluated 3-29-19, 6-28-19, 9-27-19, and 1-3-20.</p>
-      </div>
-      </div>
-      <hr class="my-4">
+    <main role="main" class="container">
+      <!-- Another banner. -->
+      <div class="container-fluid padding">
+        <div class="row welcome text-center">
+          <div class="col-12">
+            <h1 class="display-4">Your Current Health and Wellness Points</h1>
+          </div>
+          <hr />
+          <div class="col-12">
+            <p class="lead">
+              Awards will be distributed quarterly as the levels are earned.
+              Rewards are chosen at the end of each quarter. Points are
+              evaluated 3-29-19, 6-28-19, 9-27-19, and 1-3-20.
+            </p>
+          </div>
+        </div>
+        <hr class="my-4" />
       </div>
       <div class="container-fluid padding">
-          <div class="container-fluid padding">
-              <div class="row padding">
-                    <div class="col-md-12 col-lg-6">
-                        <h2>Points summary:</h2>
-                        <p id="currentPoints"></p>
-                        <p id="pointsToNextTier"></p>
-                      </div>
-                <div class="col-lg-6" id="piechart"></div>
-              </div>
+        <div class="container-fluid padding">
+          <div class="row padding">
+            <div class="col-md-12 col-lg-6">
+              <h2>Points summary:</h2>
+              <p id="currentPoints"></p>
+              <p id="pointsToNextTier"></p>
             </div>
-          <hr class="my-4">
+            <div class="col-lg-6" id="piechart"></div>
+          </div>
         </div>
-        <!-- Remove later. 
+        <hr class="my-4" />
+      </div>
+      <!-- Remove later. 
         <pre id="getResponse"></pre>-->
-    </main>          
-          <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-          <script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    </body></html>
+    </main>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>'
+        );
+    </script>
+    <script
+      src="/docs/4.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
