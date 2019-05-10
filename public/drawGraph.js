@@ -22,10 +22,18 @@ function drawChart() {
         document.getElementById("piechart")
       );
 
-      var current = "";
-      for (var i = 0; i < 1; i++) {
-        current += pie.getFormattedValue(i, 1);
-      }
+      var current =
+        parseInt(pie.getFormattedValue(0, 1)) +
+        parseInt(pie.getFormattedValue(1, 1)) +
+        parseInt(pie.getFormattedValue(2, 1)) +
+        parseInt(pie.getFormattedValue(3, 1)) +
+        parseInt(pie.getFormattedValue(4, 1)) +
+        parseInt(pie.getFormattedValue(5, 1)) +
+        parseInt(pie.getFormattedValue(6, 1)) +
+        parseInt(pie.getFormattedValue(7, 1)) +
+        parseInt(pie.getFormattedValue(8, 1)) +
+        parseInt(pie.getFormattedValue(9, 1)) +
+        parseInt(pie.getFormattedValue(10, 1));
       document.getElementById("currentPoints").innerHTML =
         "Your current points: " + current;
 
