@@ -249,7 +249,7 @@ app.post("/log", function(req, res) {
   /**
    * Update Workouts table.
    */
-  if (req.body.workouts != undefined) {
+  if (req.body.workouts > 0) {
     console.log(req.body.workouts);
     console.log(req.session.username);
     let data = [req.body.workouts, req.session.username];
@@ -267,7 +267,7 @@ app.post("/log", function(req, res) {
   /**
    * Update Yammer table.
    */
-  if (req.body.yammer != undefined) {
+  if (req.body.yammer > 0) {
     console.log(req.body.yammer);
     console.log(req.session.username);
     let data = [req.body.yammer, req.session.username];
