@@ -302,70 +302,73 @@ app.get('/ajaxcall', function(req, res){
 
     var posts = [];
     posts.push(['Category', 'Points']);
-    db.serialize(function(err, res) {
+    db.serialize(
+      function(){
         db.each(pa_Select, req.session.username, function(err, row) {
-            posts.push(['Preventive Activities', row.activity * 5])
-        }), 
-        db.each(wc_select, req.session.username, function(err, row){
-            posts.push(['Wellness Challenges', parseInt(row.eventDate) * 5])
-        }),
-        db.each(ww_select, req.session.username, function(err, row){
-          posts.push(['Wellness Wednesday', parseInt(row.eventDate) * 5])
-        }),
-        db.each(wp_select, req.session.username, function(err, row){
-          posts.push(['Wellness Presentations', parseInt(row.eventDate) * 5])
-        }),
-        db.each(w_select, req.session.username, function(err, row){
-          posts.push(['Workouts', parseInt(row.eventDate) * 3])
-        }),
-        db.each(y_select, req.session.username, function(err, row){
-          posts.push(['Yammer', parseInt(row.eventDate) * 3])
-        }),
-        db.each(wlc_select, req.session.username, function(err, row){
-          var x;
-          if(row.class_name != ""){
-            x = 0;
-            }else{
-              x = 5;
-            }
-          posts.push(['Wellness Class', parseInt(x)])
-        }),
-        db.each(oa_select, req.session.username, function(err, row){
-          var x;
-          if(row.org_name != ""){
-            x = 0;
-            }else{
-              x = 5;
-            }
-          posts.push(['Organized Activity', parseInt(x)])
-        }),
-        db.each(sg_select, req.session.username, function(err, row){
-          var x;
-          if(row.group_name != ""){
-            x = 0;
-            }else{
-              x = 5;
-            }
-          posts.push(['Social Group', parseInt(x)])
-        }),        
-        db.each(wg_select, req.session.username, function(err, row){
-          var x;
-          if(row.goal != ""){
-            x = 0;
+          posts.push(['Preventive Activities', row.activity * 5])
+      });
+      db.each(wc_select, req.session.username, function(err, row){
+        posts.push(['Wellness Challenges', parseInt(row.eventDate) * 5])
+      });
+      db.each(ww_select, req.session.username, function(err, row){
+        posts.push(['Wellness Wednesday', parseInt(row.eventDate) * 5])
+      });
+      db.each(wp_select, req.session.username, function(err, row){
+        posts.push(['Wellness Presentations', parseInt(row.eventDate) * 5])
+      });
+      db.each(w_select, req.session.username, function(err, row){
+        posts.push(['Workouts', parseInt(row.eventDate) * 3])
+      });
+      db.each(y_select, req.session.username, function(err, row){
+        posts.push(['Yammer', parseInt(row.eventDate) * 3])
+      });
+      db.each(wlc_select, req.session.username, function(err, row){
+        var x;
+        if(row.class_name != ""){
+          x = 0;
           }else{
-            x=5;
+            x = 5;
           }
-          posts.push(['Wellness Goal', parseInt(x)])
-        }),
-        db.each(ba_select, req.session.username, function(err, row){
-          posts.push(['Bonus Activities', parseInt(row.bonus) * 5])
-          console.log(posts);
-        }),
-        function(err, res) {
-          res.send(posts);
-        };
-    });
-  db.close();
+        posts.push(['Wellness Class', parseInt(x)])
+      });
+      db.each(oa_select, req.session.username, function(err, row){
+        var x;
+        if(row.org_name != ""){
+          x = 0;
+          }else{
+            x = 5;
+          }
+        posts.push(['Organized Activity', parseInt(x)])
+      });
+      db.each(sg_select, req.session.username, function(err, row){
+        var x;
+        if(row.group_name != ""){
+          x = 0;
+          }else{
+            x = 5;
+          }
+        posts.push(['Social Group', parseInt(x)])
+      });
+      db.each(wg_select, req.session.username, function(err, row){
+        var x;
+        if(row.goal != ""){
+          x = 0;
+        }else{
+          x=5;
+        }
+        posts.push(['Wellness Goal', parseInt(x)])
+      });
+      db.each(ba_select, req.session.username, function(err, row){
+        posts.push(['Bonus Activities', parseInt(row.bonus) * 5])
+      },function () {
+        db.close();
+        console.log("sending");
+        console.log(posts);
+        res.send(posts);
+      });
+    
+      }
+    );
 });
 
 /*
